@@ -5,7 +5,7 @@ public class EsercizioSpesa {
 	
 		//istanzia 3 variabili: speseGenerali, speseAuto, speseViaggi. Calcola il totale, la media e la media sul trimestre. Stampa tutto in uno specchietto (finto) con i Syso
 		//istanzio 3 variabili utilizzando la , tra una e l'altra
-		double speseGenerali, speseAuto, speseViaggi;
+		double speseGenerali, speseAuto, speseViaggi, speseIstruzione;
 		//assegno un valore a ciascuna variabile
 		speseGenerali = 2524.36;
 		speseAuto = 951.2;
