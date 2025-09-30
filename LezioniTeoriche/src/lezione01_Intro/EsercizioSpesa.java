@@ -10,6 +10,7 @@ public class EsercizioSpesa {
 		speseGenerali = 2524.36;
 		speseAuto = 951.2;
 		speseViaggi = 4201;
+		speseIstruzione = 150;
 		
 		double totaleAnno = speseAuto + speseGenerali + speseViaggi;
 		double mediaSpese = totaleAnno / 3;
