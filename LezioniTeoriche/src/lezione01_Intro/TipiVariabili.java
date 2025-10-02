@@ -37,6 +37,7 @@ public class TipiVariabili {
 		System.out.println("Il valore del carattere è: " + carattere);
 		
 		char car2 = 'p';
+
 		
 		
 		//TIPI NON PRIMITIVI

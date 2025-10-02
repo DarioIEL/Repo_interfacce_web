@@ -10,7 +10,7 @@ public class Cast {
 		int differenza = num1 - num2;
 		int prodotto = num1 * num2;
 //		devo forzare il dato ad essere di un determinato tipo: cast 
-		double divisione = (double) (num1 )/ (double) (num2);
+		double divisione = (double) (num1)/ (double) (num2);
 		
 		System.out.println("le 4 operazioni valgono ");
 		System.out.println("Somma " + somma);
@@ -32,6 +32,7 @@ public class Cast {
 		System.out.println(b3); //ATT: qui perdo il dato
 	
 		
+		//passo da un tipo più piccolo ad uno più grande
 		byte b4 = -128;
 		int i4 = (int) b4;
 		System.out.println(i4);
