@@ -8,17 +8,17 @@ public class Array {
 //		Vengono identificati con le parentesi [ ]
 //		In Java gli array sono Oggetti, vengono allocati nella memoria heap (quella dedicata proprio agli oggetti
 			
-		//Dimensione stabilita a runtime e fissa
+		//Dimensione stabilita a runtime e fissa 
 		String[] colori = new String[5]; 
 		
 		//assegno ad ogni indice un colore
-		colori[0] = "Blu";
+		colori[0] = "Blu";  
 		colori[1] = "Rosso";
 		colori[2] = "Verde";
 		colori[3] = "Rosa";
 		colori[4] = "Giallo";
 		
-		int lunghezzaColori = colori.length;
+		int lunghezzaColori = colori.length; //5
 		System.out.println("L'array contiene " + lunghezzaColori + " colori");
 		
 		System.out.println("Il primo colore è " + colori[0]);

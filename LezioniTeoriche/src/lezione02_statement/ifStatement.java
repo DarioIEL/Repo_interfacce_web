@@ -66,7 +66,8 @@ public class ifStatement {
 		System.out.println(output);
 		
 		String nome = "Dario";
-		String cognome = "Dario";
+//		String cognome = "Dario";
+		String cognome = new String("Dario");
 		
 		//ATT: non utilizzare == per le stringhe, potrebbero puntare a due indirizzi di memoria diversi
 		
@@ -76,7 +77,11 @@ public class ifStatement {
 			System.out.println("Hai cognome e nome diversi");
 		}
 		
-		
+		if(nome == cognome) {
+			System.out.println("Nome e cognome sono uguali");
+		}else {
+			System.out.println("Nome e cognome sono diversi");
+		}
 		
 	}
 }
