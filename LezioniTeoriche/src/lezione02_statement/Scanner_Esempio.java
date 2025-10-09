@@ -40,9 +40,7 @@ public class Scanner_Esempio {
 		System.out.println("Ciao " + mioNome + " hai appena acquisito questa Stringa: " + qualcosa);
 		
 		
-		
-		
-		
+
 		
 	}
 
