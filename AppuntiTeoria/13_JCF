@@ -1,0 +1,202 @@
+# Java Collections Framework (JCF) - Guida Completa
+
+## Introduzione
+
+Il **Java Collections Framework (JCF)** è un'architettura unificata per rappresentare e manipolare collezioni di oggetti in Java. Fornisce interfacce, implementazioni e algoritmi per gestire gruppi di oggetti in modo efficiente e standardizzato.
+
+## Vantaggi del JCF
+
+- **Riduce lo sforzo di programmazione** fornendo strutture dati e algoritmi già implementati
+- **Promuove il riuso del software** attraverso componenti standardizzati
+
+## Architettura del Framework
+
+Il JCF è basato su una gerarchia di **interfacce** con multiple **implementazioni** concrete:
+
+```
+Collection (interfaccia radice)
+├── List (interfacce figlie)
+├── Set
+└── Queue
+    └── Deque
+
+Map (interfaccia separata, non estende Collection)
+```
+
+## Interfacce Principali
+
+### Collection
+L'interfaccia radice che definisce operazioni comuni per tutti i gruppi di oggetti:
+- `add()`, `remove()`, `contains()`
+- `size()`, `isEmpty()`, `clear()`
+- `iterator()`, `toArray()`
+
+### List
+Collezione **ordinata** che **ammette duplicati**:
+- Accesso per indice: `get(index)`, `set(index, element)`
+- Ricerca: `indexOf()`, `lastIndexOf()`
+- Iterazione bidirezionale con `ListIterator`
+
+### Set
+Collezione che **non ammette duplicati**:
+- Basato sul concetto matematico di insieme
+- Metodi ereditati da Collection
+- Controllo automatico dei duplicati
+
+### Queue
+Collezione per gestire elementi in modalità **FIFO** (First-In-First-Out):
+- `offer()`, `poll()`, `peek()` (non lanciano eccezioni)
+- `add()`, `remove()`, `element()` (lanciano eccezioni)
+
+### Deque
+Estende Queue permettendo inserimento/rimozione da **entrambe le estremità**:
+- Metodi per la "testa": `addFirst()`, `removeFirst()`, `peekFirst()`
+- Metodi per la "coda": `addLast()`, `removeLast()`, `peekLast()`
+
+### Map
+Interfaccia separata per associazioni **chiave-valore**:
+- `put()`, `get()`, `remove()`
+- `keySet()`, `values()`, `entrySet()`
+- Non estende Collection ma è parte del framework
+
+## Implementazioni Concrete
+
+### Implementazioni di List
+
+#### ArrayList
+- **Struttura**: Array ridimensionabile
+- **Uso ideale**: Accesso frequente per indice, poche modifiche strutturali
+
+#### LinkedList
+- **Struttura**: Lista doppiamente collegata
+- **Uso ideale**: Frequenti inserimenti/rimozioni, implementa anche Deque
+
+### Implementazioni di Set
+
+#### HashSet
+- **Struttura**: Tabella hash
+- **Caratteristiche**: Non mantiene ordine, permette un null
+
+#### TreeSet
+- **Struttura**: Albero rosso-nero (Red-Black Tree)
+- **Caratteristiche**: Elementi ordinati naturalmente o tramite Comparator
+
+### Implementazioni di Map
+
+#### HashMap
+- **Struttura**: Tabella hash
+- **Caratteristiche**: Non sincronizzata, permette null
+
+## Algoritmi e Utilità
+
+### Classe Collections
+Fornisce algoritmi statici per operazioni comuni:
+
+#### Ordinamento
+```java
+Collections.sort(list);
+Collections.sort(list, comparator);
+Collections.reverse(list);
+```
+
+#### Ricerca
+```java
+Collections.binarySearch(list, key);
+Collections.min(collection);
+Collections.max(collection);
+```
+
+#### Manipolazione
+```java
+Collections.shuffle(list);
+Collections.fill(list, object);
+Collections.copy(dest, src);
+```
+
+### Classe Arrays
+Utilità per array che si integrano con le collezioni:
+```java
+Arrays.asList(array);
+Arrays.sort(array);
+Arrays.binarySearch(array, key);
+```
+
+## Scelta dell'Implementazione
+
+### Criteri di Scelta
+
+#### Per List:
+- **ArrayList**: Accesso frequente per indice
+- **LinkedList**: Frequenti inserimenti/rimozioni, uso come queue/stack
+
+#### Per Set:
+- **HashSet**: Performance massima, ordine non importante
+- **LinkedHashSet**: Serve mantenere ordine di inserimento
+- **TreeSet**: Serve ordinamento automatico
+
+#### Per Map:
+- **HashMap**: Uso generale, performance massima
+- **LinkedHashMap**: Cache o quando serve ordine
+- **TreeMap**: Chiavi ordinate necessarie
+
+
+## Iteratori
+
+### Iterator
+Interfaccia base per attraversare collezioni:
+```java
+Iterator<String> it = collection.iterator();
+while (it.hasNext()) {
+    String element = it.next();
+    // it.remove(); // rimozione sicura durante iterazione
+}
+```
+
+### ListIterator
+Estende Iterator per liste con navigazione bidirezionale:
+```java
+ListIterator<String> lit = list.listIterator();
+// Metodi aggiuntivi: hasPrevious(), previous(), set(), add()
+```
+
+### Enhanced For Loop
+Sintassi semplificata per iterazione:
+```java
+for (String element : collection) {
+    // uso element
+}
+```
+
+## Generics e Type Safety
+
+Dal Java 5, le collezioni supportano i **Generics** per type safety a compile-time:
+
+```java
+// Senza generics (sconsigliato)
+List list = new ArrayList();
+list.add("string");
+String s = (String) list.get(0); // cast necessario
+
+// Con generics (raccomandato)
+List<String> list = new ArrayList<>();
+list.add("string");
+String s = list.get(0); // no cast necessario
+```
+
+## Best Practices
+
+1. **Usa l'interfaccia più generale possibile** come tipo di variabile:
+   ```java
+   List<String> list = new ArrayList<>(); // Buono
+   ArrayList<String> list = new ArrayList<>(); // Evitare
+   ```
+
+2. **Specifica sempre i generics** per type safety
+
+3. **Usa diamond operator** (Java 7+):
+   ```java
+   Map<String, List<Integer>> map = new HashMap<>();
+   ```
+4. **Usa Collections.unmodifiableXxx()** per collezioni immutabili
+
+5. **Implementa equals() e hashCode()** correttamente per oggetti custom in Set/Map
