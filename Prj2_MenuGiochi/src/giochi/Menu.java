@@ -22,6 +22,7 @@ public class Menu {
 			switch(scelta) {
 			case '1':
 				System.out.println("Hai scelto di giocare alla Tombola");
+				Tombola.estrai2();
 				break;
 			case '2':
 				System.out.println("Hai scelto di giocare con i Triangoli");
