@@ -1,4 +1,4 @@
-package lezione3_Metodi;
+package lezione03_Metodi;
 
 public class Intro2_MetodiDegliAltri {
 

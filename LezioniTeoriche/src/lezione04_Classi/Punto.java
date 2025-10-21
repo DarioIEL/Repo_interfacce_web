@@ -1,4 +1,4 @@
-package lezione4_Classi;
+package lezione04_Classi;
 
 public class Punto {
 
