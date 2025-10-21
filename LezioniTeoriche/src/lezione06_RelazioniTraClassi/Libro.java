@@ -26,6 +26,7 @@ public class Libro {
 
 			return "Libro [titolo=" + titolo + ", autore=" + autore + "]";
 		} else {
+			System.out.println(autori.get(0).nome);
 			return "Libro [titolo=" + titolo + ", autori=" + autori + "]";
 		}
 	}

@@ -108,6 +108,7 @@ public class ArrayList_esempi {
 		
 		animali1.addAll(animali2);
 		System.out.println(animali1);
+		
 	
 		//ATT: con List.of creo delle liste immutabili
 		List<String> lettere = List.of("A", "B", "C");
