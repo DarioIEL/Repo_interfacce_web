@@ -44,5 +44,13 @@ public class RegistroCambiCtrl {
 			return "Non ci sono cambi sulla seguente cassa";
 		}
 	}
+	
+	//Restituisce tutti i moviementi in euro e dollari
+	//versati 600 euro
+	//prelevati 700 dollari
+	//versati 500 dollari
+	public void getTotaleMoviementi() {
+		
+	}
 
 }
