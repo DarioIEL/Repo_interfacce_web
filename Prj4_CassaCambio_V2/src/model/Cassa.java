@@ -6,10 +6,9 @@ public class Cassa {
 	private double fondoDollari, saldoEuro;
 	private static final double TASSO_CAMBIO = 0.85;
 
-	public Cassa(String nome, double fondoDollari, double saldoEuro) {
+	public Cassa(String nome, double fondoDollari) {
 		this.nome = nome;
 		this.fondoDollari = fondoDollari;
-		this.saldoEuro = saldoEuro;
 	}
 
 	public String getNome() {

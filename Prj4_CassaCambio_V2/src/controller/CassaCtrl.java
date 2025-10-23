@@ -12,9 +12,9 @@ public class CassaCtrl {
 	private RegistroCambiCtrl registro;
 	
 
-	public CassaCtrl(Cassa cassa, RegistroCambiCtrl registro) {
-		this.cassa = cassa;
-		this.registro = registro;
+	public CassaCtrl(String nomeCassa, double importoIniziale) {
+		this.cassa = new Cassa(nomeCassa, importoIniziale );
+		this.registro = new RegistroCambiCtrl();
 	}
 
 	public boolean aggiungiDollari(double importo) {
