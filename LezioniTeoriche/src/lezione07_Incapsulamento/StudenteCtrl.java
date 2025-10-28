@@ -15,11 +15,13 @@ public class StudenteCtrl {
 	public void registraStudente(String nome, String cognome, String accesso) {
 		if(accesso.equals("1234")) {
 			
-			Studente stud = new Studente();
-			stud.setNome(nome);
-			stud.setCognome(cognome);
-			stud.setAnnoIscrizione(2024);
+			Studente stud = new Studente(nome, cognome, 2024);
+			
+//			stud.setNome(nome);
+//			stud.setCognome(cognome);
+//			stud.setAnnoIscrizione(2024);
 			stud.setMatricola(0);
+
 			
 			this.studenti.add(stud);
 		}

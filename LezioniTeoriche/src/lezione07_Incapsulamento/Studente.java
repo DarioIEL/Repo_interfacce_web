@@ -1,5 +1,7 @@
 package lezione07_Incapsulamento;
 
+import java.util.List;
+
 public class Studente {
 
 	// L'incapsulamento si mette in atto attraverso l'utilizzo dei modificatori
@@ -12,6 +14,7 @@ public class Studente {
 	private boolean presenza;
 	static int contatore;
 
+
 	public Studente() {}
 
 	public Studente(String nome, String cognome, int annoIscrizione) {
@@ -21,6 +24,7 @@ public class Studente {
 		this.matricola = ++contatore;
 		this.presenza = true;
 	}
+
 
 	// Per poter manipolare queste propr utilizzo i metodi Getters & Setters
 	public void setNome(String nome) {
