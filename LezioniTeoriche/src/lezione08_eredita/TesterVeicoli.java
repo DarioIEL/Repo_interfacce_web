@@ -37,6 +37,11 @@ public class TesterVeicoli {
 		Motocicletta moto = new Motocicletta("Kawasaki", "z750", 2016, "Stradale");
 		moto.mostraInfo();
 		
+		System.out.println("=== MOTO NAKED ===");
+		motoNaked motoNak = new motoNaked("Honda", "CBR", 2020, "Pista");
+		motoNak.mostraInfo();
+		motoNak.start(); //start() arriva da Motocicletta poiché Motocicletta lo sta mandando in override
+		System.out.println(motoNak.modello); //modello arriva da Veicolo
 	}
 
 }
