@@ -56,6 +56,20 @@ public class StudenteDAO {
 		}
 	}
 	
+public boolean create(Studente studente) {
+		
+		for(Studente s: listaStudenti) {
+			if(s.compareTo(studente) == 0) {
+				System.out.println("Corso già esistente con codice: " + s.getCodFiscale());
+				return false;
+			}
+		}
+		
+		listaStudenti.add(studente);
+		saveToFile();
+		return true;
+	}
+	
 	public Studente read(int id) {
 		for(Studente stud: listaStudenti) {
 			if(stud.getId() == id) {
@@ -98,7 +112,7 @@ public class StudenteDAO {
 			if(stud.getCorsoIscritto().equals(codiceCorso)) {
 				resultSet.add(stud);
 			}
-		}
+		} 
 		
 		return resultSet;
 	}

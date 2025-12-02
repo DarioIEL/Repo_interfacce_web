@@ -7,11 +7,8 @@ import model.Corso;
 
 public class CorsoController {
 
-//	private CorsoDAO corsoDAO;
 	
-	public CorsoController () {
-//		corsoDAO = new CorsoDAO();
-	}
+	public CorsoController () {}
 	
 	public boolean aggiungiCorso(Corso corso) {
 		return CorsoDAO.getCorsoDAO().create(corso);
