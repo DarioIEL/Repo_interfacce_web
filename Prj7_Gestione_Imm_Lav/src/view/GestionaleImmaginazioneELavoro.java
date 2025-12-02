@@ -3,16 +3,21 @@ package view;
 import java.util.Scanner;
 
 import controller.CorsoController;
+import controller.StudenteController;
 import model.Corso;
+import model.Studente;
 
 public class GestionaleImmaginazioneELavoro {
 	
 	private static CorsoController corsoController;
+	private static StudenteController studenteController;
+	
 	private static Scanner scanner = new Scanner(System.in);
 	
 	public static void main(String[] args) {
 		
 		corsoController = new CorsoController();
+		studenteController = new StudenteController();
 		
 		boolean continua = true;
 		
@@ -24,9 +29,44 @@ public class GestionaleImmaginazioneELavoro {
 			case 1:
 				inserisciNuovoCorso();
 			break;
+			case 2:
+				inserisciNuovoStudente();
+			break;
+			case 3:
+				corsoController.mostraCorsi();
+			break;
+			case 4:
+				studenteController.mostraStudenti();
+			break;
 			}
 		}
 		
+		
+	}
+
+	private static void inserisciNuovoStudente() {
+		scanner.nextLine();
+		System.out.println("--- Stai inserendo un nuovo studente ---");
+		
+		int id = studenteController.getNextIDStudente();
+		
+		System.out.println("Nome:");
+		String nome = scanner.nextLine();
+		
+		System.out.println("Cognome");
+		String cognome = scanner.nextLine();
+		
+		System.out.println("Codice Fiscale");
+		String codFisc = scanner.nextLine().toUpperCase();
+		
+		System.out.println("Codice Corso Iscrizione: ");
+		String codCorso = scanner.nextLine();
+		
+		Studente nuovoStudente = new Studente(id, nome, cognome, codFisc, codCorso);
+		
+		if(studenteController.aggiungiStudente(nuovoStudente)) {
+			System.out.println("Studente aggiunto con successo");
+		}
 		
 	}
 
