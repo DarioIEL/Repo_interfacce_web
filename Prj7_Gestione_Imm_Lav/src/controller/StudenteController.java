@@ -2,6 +2,7 @@ package controller;
 
 import java.util.List;
 
+import dao.AssociazioniDAO;
 import dao.CorsoDAO;
 import dao.StudenteDAO;
 import model.Corso;
@@ -10,7 +11,11 @@ import model.Studente;
 public class StudenteController {
 
 	public boolean aggiungiStudente(Studente studente) {
-		return StudenteDAO.getStudenteDAO().create(studente);
+		boolean studenteCreato = StudenteDAO.getStudenteDAO().create(studente);
+		if(studenteCreato) {
+			AssociazioniDAO.getAssociazioniDAO().addAssociazione(studente.getCorsoIscritto(), studente.getCodFiscale());
+		}
+		return studenteCreato;
 	}
 	
 	public void mostraStudenti() {
