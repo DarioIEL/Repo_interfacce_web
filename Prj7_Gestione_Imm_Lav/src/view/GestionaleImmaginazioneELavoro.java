@@ -38,9 +38,28 @@ public class GestionaleImmaginazioneELavoro {
 			case 4:
 				studenteController.mostraStudenti();
 			break;
+			case 5:
+				mostraStudentiPerCorso();
+			break;
+			case 0:
+				continua = false;
+				System.out.println("Hai chiuso l'applicazione");
+			break;
+			default:
+				System.out.println("Scelta non valida");
+			
 			}
 		}
 		
+		
+	}
+
+	private static void mostraStudentiPerCorso() {
+		scanner.nextLine();
+		System.out.println("Inserisci il codice del corso");
+		String codiceCorso = scanner.nextLine();
+		
+		studenteController.mostraStudentiPerCorso(codiceCorso);
 		
 	}
 

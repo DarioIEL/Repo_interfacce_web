@@ -52,7 +52,16 @@ public class StudenteController {
 	}
 	
 	
-	//Da fare mostraStudentiPerCorso(String codiceCorso)
+	//Da fare mostraStudentiPerCorso(String codiceCorso) questo utilizza il metodo di Associazioni DAO
+	public void mostraStudentiPerCorso(String codiceCorso) {
+		List<String> codiciStudenti = AssociazioniDAO.getAssociazioniDAO().getStudentiByCodiceCorso(codiceCorso);
+		
+		System.out.println("--- Studenti iscritti al corso " + codiceCorso + " ---");
+		for(String codice: codiciStudenti) {
+			Studente studente = StudenteDAO.getStudenteDAO().findByCodiceFiscale(codice);
+			System.out.println(studente);
+		}
+	}
 	
 	public int getNextIDStudente() {
 		return StudenteDAO.getStudenteDAO().getNextIDStudente();

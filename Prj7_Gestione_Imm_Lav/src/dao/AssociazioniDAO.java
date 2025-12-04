@@ -64,7 +64,7 @@ public class AssociazioniDAO {
 			
 			for(Map.Entry<String, List<String>> entry: associazioni.entrySet()) {
 				for(String codFiscale: entry.getValue()) {
-					pw.println(entry.getKey() +  ", " + codFiscale);
+					pw.println(entry.getKey() +  "," + codFiscale);
 				}
 			}
 	
@@ -89,5 +89,10 @@ public class AssociazioniDAO {
 	}
 	
 	//Creare un metodo getStudentiByCodiceCorso 
-//	public List<String> getStudentiByCodiceCorso(String codiceCorso){}
+	public List<String> getStudentiByCodiceCorso(String codiceCorso){
+		if(!associazioni.containsKey(codiceCorso)) {
+			return new ArrayList<String>();
+		}
+		return new ArrayList<String>(associazioni.get(codiceCorso));
+	}
 }
