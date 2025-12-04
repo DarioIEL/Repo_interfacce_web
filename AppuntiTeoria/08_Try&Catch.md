@@ -5,16 +5,19 @@ Le **eccezioni** in Java rappresentano eventi anomali o condizioni di errore che
 ## Tipi di Eccezioni
 
 1.  **Eccezioni Controllate (Checked Exceptions):**
-    * Devono essere **gestite esplicitamente** nel codice (tramite `try-catch`) o dichiarate nella firma del metodo (con `throws`).
-    * Il compilatore verifica che vengano gestite.
-    * Esempio comune: `IOException`.
+
+    - Devono essere **gestite esplicitamente** nel codice (tramite `try-catch`) o dichiarate nella firma del metodo (con `throws`).
+    - Il compilatore verifica che vengano gestite.
+    - Esempio comune: `IOException`.
 
 2.  **Eccezioni Non Controllate (Unchecked Exceptions / Runtime Exceptions):**
-    * Non è obbligatorio gestirle esplicitamente, ma è spesso consigliabile.
-    * Solitamente derivano da errori di programmazione o condizioni anomale a runtime.
-    * Esempi comuni: `NullPointerException`, `ArrayIndexOutOfBoundsException`.
+    - Non è obbligatorio gestirle esplicitamente, ma è spesso consigliabile.
+    - Solitamente derivano da errori di programmazione o condizioni anomale a runtime.
+    - Esempi comuni: `NullPointerException`, `ArrayIndexOutOfBoundsException`.
 
-## Blocchi Try-Catch
+## Gestire le eccezioni
+
+## 1. Blocchi Try-Catch
 
 Il costrutto `try-catch` permette di gestire le eccezioni:
 
@@ -25,3 +28,92 @@ try {
     // Blocco per gestire l'eccezione di tipo TipoEccezione
     // 'e' è un riferimento all'oggetto eccezione
 }
+```
+
+---
+
+**Finally:**
+
+- Il blocco `finally` viene utilizzato per contenere il codice che deve essere eseguito sempre, indipendentemente dal verificarsi o meno di un'eccezione. Ad esempio, la chiusura di risorse aperte.
+
+```java
+try {
+    // Codice che potrebbe generare un'eccezione
+} catch (TipoEccezione e) {
+    // Gestione dell'eccezione
+} finally {
+    // Codice che viene eseguito sempre
+}
+```
+
+---
+
+## 2 **Throw e Throws:**
+
+- La parola chiave `throw` viene utilizzata per lanciare manualmente un'eccezione in un blocco di codice. La parola chiave `throws` viene utilizzata nella firma del metodo per indicare che un metodo potrebbe lanciare una particolare eccezione.
+
+```java
+void metodo() throws TipoEccezione {
+    // Codice che potrebbe generare un'eccezione
+    if (condizione) {
+        throw new TipoEccezione("Messaggio di errore");
+    }
+}
+```
+
+---
+
+## 3 **Gerarchia di Eccezioni:**
+
+- Le eccezioni in Java seguono una gerarchia di classi. La classe `Throwable` è la radice di questa gerarchia, suddividendosi in `Exception` (eccezioni controllate) e `RuntimeException` (eccezioni non controllate).
+
+```java
+try {
+    // Codice che potrebbe generare un'eccezione
+} catch (Exception e) {
+    // Gestione generica delle eccezioni
+}
+```
+
+---
+
+## 4 **Creare Eccezioni Personalizzate:**
+
+- È possibile creare eccezioni personalizzate estendendo la classe `Exception` o `RuntimeException`. Ciò può essere utile per gestire situazioni specifiche all'interno del proprio codice.
+
+```java
+public class MiaEccezione extends Exception {
+    // Costruttore, metodi, ecc.
+}
+```
+
+---
+
+Le eccezioni forniscono un meccanismo robusto per gestire condizioni anomale durante l'esecuzione di un programma e migliorano la manutenibilità e la robustezza del codice.
+
+---
+
+## Le RuntimeException comprese nel pacchetto java.lang
+
+| Eccezione                       | Significato                                                                 |
+| ------------------------------- | --------------------------------------------------------------------------- |
+| ArithmeticException             | Operazione matematica non valida.                                           |
+| ArrayIndexOutOfBoundsException  | L'indice usato in un array non è valido.                                    |
+| ArrayStoreException             | Incompatibilità di tipo durante la assegnazione di un elemento di un array. |
+| ClassCastException              | Conversione di tipo non valida.                                             |
+| IllegalArgumentException        | Argomento di un metodo non valido.                                          |
+| IllegalMonitorStateException    | Monitor su thread non valido.                                               |
+| IllegalStateException           | Oggetto in uno stato che non consente l'operazione richiesta.               |
+| IllegalThreadStateException     | Operazione incompatibile con lo stato attuale di un thread.                 |
+| IndexOutOfBoundsException       | Indice non valido.                                                          |
+| NegativeArraySizeException      | Array creato con dimensione negativa.                                       |
+| NullPointerException            | Utilizzo non corretto di un valore null.                                    |
+| NumberFormatException           | Conversione non valida di una stringa in un valore numerico.                |
+| SecurityException               | Violazione delle norme di sicurezza.                                        |
+| StringIndexOutOfBoundsException | Indice non valido per i caratteri di una stringa.                           |
+| UnsupportedOperationException   | Operazione non supportata.                                                  |
+
+---
+
+## 5 Gerarchia delle eccezioni
+![Gerarchia Eccezioni](./img/Throwable.png);
