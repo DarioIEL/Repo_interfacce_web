@@ -9,3 +9,5 @@ Crea un progetto per la gestione dei Pokemon in mvc. Le interfacce andranno nel 
  - Evolvibile
  
  Nei model avrò la classe Pokemon come classe abstract e poi le varie sottoclassi come "Pikachu", "Charmender", "Bulbasaur"
+ 
+ 
