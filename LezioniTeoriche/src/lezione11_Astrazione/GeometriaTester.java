@@ -13,6 +13,10 @@ public class GeometriaTester {
 //		System.out.println("Perimetro del rettangolo: " + rett.calcolaPerimetro());
 		rett.mostraInfo();
 		
+		
+		Triangolo tri = new Triangolo("Triangolo", "Blu", 10, 5, 6.5);
+		
+		tri.mostraInfo();
 	}
 
 }

@@ -19,3 +19,6 @@ Una classe astratta è una classe che non può essere istanziata direttamente e 
 - Quando le classi che ereditano hanno molti metodi o campi in comune
 - Quando si vuole dichiarare metodi non-statici o non-final che le sottoclassi devono implementare
 - Quando si ha bisogno di accedere a modificatori diversi da public (protected, private)
+
+### Perché si usa `protected` 
+La proprietà `protected` viene usata per le proprietà delle classi astratte come buona norma. Essendoci ereditarietà singola è molto più comodo accedere direttamente alle props dichiarate nella classe astratta
