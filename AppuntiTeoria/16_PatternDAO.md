@@ -117,3 +117,7 @@ Il DAO Pattern è particolarmente utile nelle applicazioni che necessitano di in
 ![dao](./img/dao_pattern_uml_diagram.jpeg)
 
 [tutorialspoint](https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm)
+
+
+# Principi SOLID - Accoppiamento tight e loose
+[articolo](https://aulab.it/blog/che-cosa-sono-i-principi-solid-nella-programmazione-informatica)

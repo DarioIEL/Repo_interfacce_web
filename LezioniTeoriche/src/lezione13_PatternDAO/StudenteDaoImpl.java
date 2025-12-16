@@ -39,26 +39,38 @@ public class StudenteDaoImpl implements StudenteDAO{
 
 	@Override
 	public List<Studente> getAllStudenti() {
-		// TODO Auto-generated method stub
-		return null;
+		return new ArrayList<>(studenti); //restituisce una copia dell'arraylist
 	}
 
 	@Override
 	public void addStudente(Studente studente) {
-		// TODO Auto-generated method stub
-		
+		studenti.add(studente);
+		System.out.println("Hai aggiunto lo studente: " + studente.getNome() + " - Matricola: " + studente.getRollNo());
 	}
 
 	@Override
 	public void updateStudente(Studente studente) {
-		// TODO Auto-generated method stub
-		
+		for(int i = 0 ; i < studenti.size(); i++) {
+			if(studenti.get(i).getRollNo() == studente.getRollNo()) {
+				studenti.set(i, studente);
+				System.out.println("Studente modificato");
+				return;
+			}
+		}
+		System.out.println("Studente non trovato per eseguire le modifiche");		
 	}
 
 	@Override
 	public void deleteStudente(Studente studente) {
-		// TODO Auto-generated method stub
+//		for(int i = 0 ; i < studenti.size(); i++) {
+//			if(studenti.get(i).getRollNo() == studente.getRollNo()) {
+//				studenti.remove(i);
+//				break;
+//			}
+//		}
 		
+		studenti.removeIf(stud -> stud.getRollNo() == studente.getRollNo());
+		System.out.println("Studente " + studente.getNome() + " rimosso");
 	}
 	
 
