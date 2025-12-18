@@ -1,4 +1,4 @@
-package lezione14_JDBC;entity
+package lezione14_JDBC;
 
 import java.util.ArrayList;
 import java.util.List;
