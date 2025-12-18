@@ -24,9 +24,15 @@ public class Main {
 			System.out.println(f.toString());
 		}
 		
-		Film nuovoFilm = new Film("Blade Runner", 1982, "Ridley Scott");
+//		Film nuovoFilm = new Film("Titanic", 1996, "James Cameron");
 //		film.addFilm(nuovoFilm);
 		
-		film.removeFilm(6);
+//		film.removeFilm(8);
+		
+		System.out.println("=== FILM BY ID ===");
+		Film singoloFilm = film.getFilmById(1);
+		System.out.println(singoloFilm);
+		
+		
 	}
 }

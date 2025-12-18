@@ -29,6 +29,7 @@ public class FilmDAOImpl implements FilmDAO {
 			while(this.rs.next()) {
 				
 				Film f = new Film();
+				//						  "nomeColonnaDB"
 				f.setTitolo(rs.getString("titolo"));
 				f.setId(rs.getInt("id"));
 				f.setAutore(rs.getString("autore"));
@@ -44,9 +45,27 @@ public class FilmDAOImpl implements FilmDAO {
 	}
 
 	@Override
-	public Film getFilmById() {
-		// TODO Auto-generated method stub
-		return null;
+	public Film getFilmById(int id) {
+		Film f = null;
+		
+		try {
+			this.ps = this.connessione.getConn().prepareStatement(GET_BY_ID);
+			this.ps.setInt(1, id);
+			this.rs = this.ps.executeQuery();
+			if(this.rs.next()) {
+				f = new Film();
+				f.setTitolo(rs.getString("titolo"));
+				f.setAutore(rs.getString("autore"));
+				f.setAnno(rs.getInt("anno"));
+				f.setId(rs.getInt("id"));
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally {
+			this.connessione.chiudiConnessione();
+		}
+		
+		return f;
 	}
 
 	@Override
@@ -59,6 +78,7 @@ public class FilmDAOImpl implements FilmDAO {
 	public void addFilm(Film film) {
 		try {
 			this.ps = this.connessione.getConn().prepareStatement(ADD);
+			
 			this.ps.setString(1, film.getTitolo());
 			this.ps.setString(2, film.getAutore());
 			this.ps.setInt(3, film.getAnno() );

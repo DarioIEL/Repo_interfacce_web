@@ -1,4 +1,4 @@
-package lezione14_JDBC;
+package lezione14_JDBC;entity
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ public interface FilmDAO {
 	String DELETE = "delete from films where id = ?";
 	
 	List<Film> getFilms();
-	Film getFilmById();
+	Film getFilmById(int id);
 	Film getFilmByAnno();
 	
 	void addFilm(Film film);
