@@ -75,7 +75,19 @@ public class Operatori {
 		// || OR logico
 		// !  NOT logico
 		
-	
+	/**
+		 * && AND logico
+		 * || OR logico
+		 * ! NOT logico
+		 */
+
+		/** TABELLA DELLE VERITA'
+		 * 	c1  |  c2  |  c1 && c2 | c1 || c2
+		 * 	 T 	|	T  |	 T	   |    T
+		 *   F  |   T  |   	 F     |    T
+		 *   T  |   F  |     F     |    T
+		 *   F  |   F  |     F     |    F
+		 */
 		
 		
 		
