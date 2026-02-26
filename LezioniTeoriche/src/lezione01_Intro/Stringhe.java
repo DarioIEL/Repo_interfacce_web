@@ -23,6 +23,14 @@ public class Stringhe {
 
 		// Altro modo di dichiarare la string
 		String mioNome = new String("Dario");
+		String tuoNome = new String("Dario");
+		
+		if(mioNome.equals(tuoNome)) {
+			System.out.println("Abbiamo lo stesso nome");
+		}else {
+			System.out.println("Abbiamo due nomi diversi");
+		}
+		
 
 		String saluto = "Ciao come stai?";
 
