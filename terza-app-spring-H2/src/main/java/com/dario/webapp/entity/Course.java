@@ -3,6 +3,8 @@ package com.dario.webapp.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,6 +26,7 @@ public class Course {
 	private String description;
 
 	@ManyToMany(mappedBy = "courses")
+	@JsonIgnore
 	private Set<Student> students = new HashSet<>();
 
 	public Course() {
