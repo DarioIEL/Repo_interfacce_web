@@ -1,0 +1,55 @@
+{
+  "eventi": [
+    {
+      "id": "1",
+      "titoloEvento": "Festival della Tecnologia",
+      "descrizione": "Un incontro dedicato alle innovazioni digitali e alla cultura tecnologica.",
+      "costoFoto": 15,
+      "dataSvolgimento": "2026-04-10"
+    },
+    {
+      "id": "2",
+      "titoloEvento": "Concerto di Primavera",
+      "descrizione": "Serata musicale all'aperto con artisti locali e nazionali.",
+      "costoFoto": 10,
+      "dataSvolgimento": "2026-05-01"
+    },
+    {
+      "id": "3",
+      "titoloEvento": "Fiera del Libro di Milano",
+      "descrizione": "Evento annuale per gli amanti della lettura con presentazioni, firme e workshop.",
+      "costoFoto": 5,
+      "dataSvolgimento": "2026-06-15"
+    },
+    {
+      "id": "4",
+      "titoloEvento": "Corso di Cucina Mediterranea",
+      "descrizione": "Lezioni pratiche con uno chef professionista per imparare i piatti tipici del Mediterraneo.",
+      "costoFoto": 20,
+      "dataSvolgimento": "2026-07-08"
+    },
+    {
+      "id": "5",
+      "titoloEvento": "Workshop di Fotografia Urbana",
+      "descrizione": "Uscita fotografica nel centro città per imparare tecniche di scatto in ambiente urbano.",
+      "costoFoto": 12,
+      "dataSvolgimento": "2026-09-20"
+    }
+  ],
+  "carrello": [
+    {
+      "id": "5",
+      "titoloEvento": "Workshop di Fotografia Urbana",
+      "descrizione": "Uscita fotografica nel centro città per imparare tecniche di scatto in ambiente urbano.",
+      "costoFoto": 12,
+      "dataSvolgimento": "2026-09-20"
+    },
+    {
+      "id": "2",
+      "titoloEvento": "Concerto di Primavera",
+      "descrizione": "Serata musicale all'aperto con artisti locali e nazionali.",
+      "costoFoto": 10,
+      "dataSvolgimento": "2026-05-01"
+    }
+  ]
+}

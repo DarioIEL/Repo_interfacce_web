@@ -1,0 +1,1 @@
+//Comporre la fetch per scaricare gli elementi nel carrello
