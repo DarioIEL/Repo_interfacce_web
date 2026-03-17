@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Blog</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1>Mini Blog</h1>
+
+            <p>
+                Un piccolo blog dinamico costruito con HTML, CSS e Javacript.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <section class="controls">
+            <div class="container">
+                <input type="text" id="searchInput" placeholder="Cerca un post per titolo...">
+                <p id="statusMessage"></p>
+            </div>
+        </section>
+
+        <section class="posts-section">
+            <div class="container">
+                <div id="postsContainer" class="posts-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal">
+            <button id="closeModalBtn" class="modal-close" aria-label="Chiudi modale">&times;</button>
+            <div id="modalContent">
+                <h2>Titolo del post</h2>
+                <p>Contenuto del post</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
