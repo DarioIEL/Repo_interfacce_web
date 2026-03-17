@@ -1,6 +1,7 @@
 package com.dario.webapp.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,17 +14,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dario.webapp.entity.Course;
 import com.dario.webapp.entity.Student;
+import com.dario.webapp.repository.StudentRepository;
 import com.dario.webapp.service.StudentService;
 
 @RestController
 @RequestMapping("/api/students")
 public class StudentController {
 
+    private final StudentRepository studentRepository;
+
     private final StudentService studentService;
 
-    public StudentController(StudentService studentService) {
+    public StudentController(StudentService studentService, StudentRepository studentRepository) {
         this.studentService = studentService;
+        this.studentRepository = studentRepository;
     }
 
     @GetMapping
@@ -35,6 +41,19 @@ public class StudentController {
     public Student getStudentById(@PathVariable Long id) {
         return studentService.findStudentById(id);
     }
+//    public ResponseEntity<StudentDTO> getStudent(@PathVariable Long id){
+//    	return studentRepository.findById(id)
+//    			.map(this::convertToDTO)
+//    			.map(ResponseEntity::ok)
+//    			.orElse(ResponseEntity.notFound().build());
+//    }
+//    
+//    private StudentDTO convertToDTO(Student student) {
+//    	List<String> titles = student.getCourses().stream()
+//    			.map(Course::getTitle)
+//    			.collect(Collectors.toList());
+//    	return new StudentDTO(student.getId(), student.getFirstName(), student.getLastName(), student.getEmail(), titles);
+//    }
 
     @PostMapping
     public ResponseEntity<Student> createStudent(@RequestBody Student student) {
